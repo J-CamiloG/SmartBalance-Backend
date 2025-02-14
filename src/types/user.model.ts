@@ -8,8 +8,8 @@ export interface UserResponse {
 }
 
 export enum UserRole {
-    ADMIN = "admin",
-    client = "client"
+    CLIENT = 'client',
+    ADMIN = 'admin'
 }
 
 export interface IUser {
