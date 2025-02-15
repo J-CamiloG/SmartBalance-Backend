@@ -3,12 +3,20 @@ import dotenv from 'dotenv';
 import connectDB from './config/database';
 import swaggerUi from'swagger-ui-express';
 import authRoutes from './routes/auth.routes';
+import cors from 'cors';
 import { specs } from './config/swagger';
 
 
 dotenv.config();
 
 const app = express();
+
+// Configuración de CORS
+app.use(cors({
+    origin: '*', // En producción, deberías especificar los dominios permitidos
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 app.use(express.json()); // ******
 
