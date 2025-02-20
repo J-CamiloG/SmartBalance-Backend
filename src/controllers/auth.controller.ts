@@ -79,7 +79,7 @@ export const register = async (req: Request, res: Response): Promise<void> => {
         });
     }
     catch (error) {
-        console.error('Error completo:', error); // Agregar este log
+        console.error('Error completo:', error); 
         res.status(500).json({
             message: 'Error registering user',
             error: error instanceof Error ? error.message : 'Unknown error'
